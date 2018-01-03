@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -21,6 +22,8 @@ import java.util.ArrayList;
  */
 
 public class MainActivity extends DrawerBaseActivity {
+    Button login,register;
+
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
@@ -53,10 +56,16 @@ public class MainActivity extends DrawerBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
 
+        login = (Button) fullLayout.findViewById(R.id.login);
+        register = (Button) fullLayout.findViewById(R.id.register);
+
         btn_facebook=(ImageButton) findViewById(R.id.facebook_btn);
         btn_google=(ImageButton)findViewById(R.id.google_btn);
         btn_twitter=(ImageButton)findViewById(R.id.twitter_btn);
         btn_rss=(ImageButton)findViewById(R.id.rss_feed_btn);
+
+        login.setOnClickListener(this);
+        register.setOnClickListener(this);
 
         btn_facebook.setOnClickListener(this);
         btn_google.setOnClickListener(this);
@@ -150,6 +159,16 @@ public class MainActivity extends DrawerBaseActivity {
     public void onClick(View v) {
         String url;
         switch (v.getId()) {
+
+            case R.id.login:
+                new LoginClass().showDialogContent(MainActivity.this);
+                break;
+
+            case R.id.register:
+                new RegisterClass().showDialogContent(MainActivity.this);
+                break;
+
+
             case R.id.facebook_btn:
                 url="https://en-gb.facebook.com/login/";
                 gotoIntent(url);

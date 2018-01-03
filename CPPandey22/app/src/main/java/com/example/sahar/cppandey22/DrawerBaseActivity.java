@@ -3,7 +3,6 @@ package com.example.sahar.cppandey22;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.design.widget.CoordinatorLayout;
-import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,7 +14,6 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class DrawerBaseActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -135,13 +133,10 @@ public class DrawerBaseActivity extends AppCompatActivity
         String url;
         switch (v.getId()) {
             case R.id.login:
-                Log.e("LOGIN","login");
-                Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
                 new LoginClass().showDialogContent(DrawerBaseActivity.this);
                 break;
 
             case R.id.register:
-                Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
                 new RegisterClass().showDialogContent(DrawerBaseActivity.this);
                 break;
         }
