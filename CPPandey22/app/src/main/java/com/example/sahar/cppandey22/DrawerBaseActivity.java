@@ -66,6 +66,11 @@ public class DrawerBaseActivity extends AppCompatActivity
         register.setOnClickListener(this);
     }
 
+    public void changeViews()
+    {
+        login.setText("Logout");
+        register.setVisibility(View.INVISIBLE);
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_view);
@@ -133,7 +138,12 @@ public class DrawerBaseActivity extends AppCompatActivity
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login:
-                new LoginClass().showDialogContent(DrawerBaseActivity.this);
+                if(login.getText().toString().equals("Login")) {
+                    new LoginClass().showDialogContent(DrawerBaseActivity.this);
+                }else{
+                    login.setText("Login");
+                    register.setVisibility(View.VISIBLE);
+                }
                 break;
 
             case R.id.register:

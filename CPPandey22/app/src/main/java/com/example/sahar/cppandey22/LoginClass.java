@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -16,8 +15,10 @@ import android.widget.Toast;
  */
 class LoginClass {
     EditText login_email,login_pwd;
-
+Button login,register;
     public void showDialogContent(final Context context) {
+        this.login=login;
+        this.register=register;
 
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View promptView = layoutInflater.inflate(R.layout.login_dialog_box, null);
@@ -60,8 +61,9 @@ class LoginClass {
 
         } else {
             Toast.makeText(context, "Login successful", Toast.LENGTH_SHORT).show();
+
+            ((DrawerBaseActivity)context).changeViews();
             login_dialog.dismiss();
         }
     }
-
 }

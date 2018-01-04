@@ -49,8 +49,8 @@ public class MainActivity extends DrawerBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
 
-        login = (Button) fullLayout.findViewById(R.id.login);
-        register = (Button) fullLayout.findViewById(R.id.register);
+        login = (Button) findViewById(R.id.login);
+        register = (Button) findViewById(R.id.register);
 
         btn_facebook=(ImageButton) findViewById(R.id.facebook_btn);
         btn_google=(ImageButton)findViewById(R.id.google_btn);
@@ -155,7 +155,12 @@ public class MainActivity extends DrawerBaseActivity {
         switch (v.getId()) {
 
             case R.id.login:
-                new LoginClass().showDialogContent(MainActivity.this);
+                if(login.getText().toString().equals("Login")) {
+                    new LoginClass().showDialogContent(MainActivity.this);
+                }else{
+                    login.setText("Login");
+                    register.setVisibility(View.VISIBLE);
+                }
                 break;
 
             case R.id.register:

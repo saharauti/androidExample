@@ -39,7 +39,7 @@ public class WebViewActivity extends DrawerBaseActivity {
                 if(progressDialog==null){
                     progressDialog=new ProgressDialog(WebViewActivity.this);
 
-                    //progressDialog.setMessage("Loading...");
+                    progressDialog.setMessage("Loading...");
                     progressDialog.show();
                 }
             }
@@ -49,7 +49,6 @@ public class WebViewActivity extends DrawerBaseActivity {
                 try{
                     if(progressDialog.isShowing()){
                         progressDialog.dismiss();
-                      //  progressDialog=null;
                     }
                 }catch (Exception exception){
                     exception.printStackTrace();

@@ -26,7 +26,7 @@ public class CustomPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return images.length;
+        return images.length;//number of images
     }
 
     @Override
