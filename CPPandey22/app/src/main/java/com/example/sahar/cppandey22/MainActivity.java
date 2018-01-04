@@ -7,19 +7,12 @@ import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
-
 import java.util.ArrayList;
-
-/**
- * Created by sahar on 23/12/17.
- */
 
 public class MainActivity extends DrawerBaseActivity {
     Button login,register;
@@ -153,6 +146,7 @@ public class MainActivity extends DrawerBaseActivity {
         Intent myIntent = new Intent(MainActivity.this, WebViewActivity.class);
         myIntent.putExtra("url",url);
         startActivity(myIntent);
+        finish();
     }
 
     @Override
@@ -167,7 +161,6 @@ public class MainActivity extends DrawerBaseActivity {
             case R.id.register:
                 new RegisterClass().showDialogContent(MainActivity.this);
                 break;
-
 
             case R.id.facebook_btn:
                 url="https://en-gb.facebook.com/login/";
@@ -248,4 +241,9 @@ public class MainActivity extends DrawerBaseActivity {
             super.onPause();
             handler.removeCallbacks(runnable);
         }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

@@ -8,6 +8,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 /**
@@ -15,7 +16,7 @@ import android.widget.Toast;
  */
 
 class RegisterClass {
-    EditText register_uname,register_email,register_pwd;
+    EditText register_uname, register_email, register_pwd;
 
     public void showDialogContent(final Context context) {
 
@@ -26,19 +27,19 @@ class RegisterClass {
         final Dialog register_dialog = new Dialog(context);
         register_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-         register_uname=(EditText)promptView.findViewById(R.id.reg_uname);
-         register_email = (EditText) promptView.findViewById(R.id.reg_email);
-         register_pwd = (EditText) promptView.findViewById(R.id.reg_pwd);
+        register_uname = (EditText) promptView.findViewById(R.id.reg_uname);
+        register_email = (EditText) promptView.findViewById(R.id.reg_email);
+        register_pwd = (EditText) promptView.findViewById(R.id.reg_pwd);
 
 
-        Button register_btn = (Button) promptView.findViewById(R.id.btn_register); //login button inside the login dialog box
+        Button register_btn = (Button) promptView.findViewById(R.id.btn_register); //register button inside the register dialog box
         register_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                goToRegister(context);
+                goToRegister(context, register_dialog);
             }
         });
 
-        ImageButton close_btn = (ImageButton) promptView.findViewById(R.id.reg_close_btn);
+        ImageView close_btn = (ImageView) promptView.findViewById(R.id.reg_close_btn);
         close_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,13 +50,13 @@ class RegisterClass {
         register_dialog.show();
     }
 
-    private void goToRegister(Context context) {
+    private void goToRegister(Context context, Dialog register_dialog) {
         //on click of register , activity here
-        String username=register_uname.getText().toString();
+        String username = register_uname.getText().toString();
         String email = register_email.getText().toString();
         String password = register_pwd.getText().toString();
 
-        if(username.matches("")) {
+        if (username.matches("")) {
             Toast.makeText(context, "Please enter your Username", Toast.LENGTH_SHORT).show();
         }
         if (email.matches("")) {
@@ -63,10 +64,11 @@ class RegisterClass {
 
         }
         if (password.matches("")) {
-            Toast.makeText(context, "Please enter your Passwrod", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Please enter your Password", Toast.LENGTH_LONG).show();
 
         } else {
             Toast.makeText(context, "Registration successful", Toast.LENGTH_LONG).show();
+            register_dialog.dismiss();
         }
     }
 }

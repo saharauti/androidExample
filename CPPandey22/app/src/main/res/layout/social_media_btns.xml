@@ -11,18 +11,19 @@
         android:layout_height="50dp"
         android:background="@color/blue"
         android:src="@drawable/ic_facebook"
-        android:paddingTop="50dp"
-        android:paddingBottom="50dp"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        android:layout_weight="1"
-        />
+        android:padding="14dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:layout_weight="1" />
     <ImageButton
         android:id="@+id/google_btn"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="@color/red"
         android:src="@drawable/ic_google"
+        android:padding="14dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
         android:layout_weight="1"/>
     <ImageButton
         android:id="@+id/twitter_btn"
@@ -30,6 +31,9 @@
         android:layout_height="50dp"
         android:background="@color/lightBlue"
         android:src="@drawable/ic_twitter"
+        android:padding="14dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
         android:layout_weight="1"/>
     <ImageButton
         android:id="@+id/rss_feed_btn"
@@ -37,6 +41,9 @@
         android:layout_height="50dp"
         android:background="@color/orange"
         android:src="@drawable/ic_rssfeed"
+        android:padding="14dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
         android:layout_weight="1"
         />
 </LinearLayout>

@@ -70,7 +70,8 @@ public class DrawerBaseActivity extends AppCompatActivity
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_view);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+            finish();
+           drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
@@ -86,8 +87,7 @@ public class DrawerBaseActivity extends AppCompatActivity
 
         switch (id) {
             case R.id.nav_home:
-                url = "http://demo.technowebmart.com/pandeyji_mob_app/main.html";
-                goToNewActivity(url);
+                startActivity(new Intent(DrawerBaseActivity.this, MainActivity.class));
                 break;
 
             case R.id.nav_team:
@@ -126,11 +126,11 @@ public class DrawerBaseActivity extends AppCompatActivity
         Intent intent = new Intent(this, WebViewActivity.class);
         intent.putExtra("url", url);
         startActivity(intent);
+        finish();
     }
 
     @Override
     public void onClick(View v) {
-        String url;
         switch (v.getId()) {
             case R.id.login:
                 new LoginClass().showDialogContent(DrawerBaseActivity.this);

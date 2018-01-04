@@ -39,7 +39,7 @@ public class WebViewActivity extends DrawerBaseActivity {
                 if(progressDialog==null){
                     progressDialog=new ProgressDialog(WebViewActivity.this);
 
-                    progressDialog.setMessage("Loading...");
+                    //progressDialog.setMessage("Loading...");
                     progressDialog.show();
                 }
             }
@@ -62,10 +62,7 @@ public class WebViewActivity extends DrawerBaseActivity {
 
     @Override
     public void onBackPressed(){
-        if(webView.canGoBack()){
-            webView.goBack();
-        }else{
-            super.onBackPressed();
-        }
+       startActivity(new Intent(WebViewActivity.this, MainActivity.class));
+       finish();
     }
 }

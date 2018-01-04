@@ -3,7 +3,7 @@ package com.example.sahar.cppandey22;
 /**
  * Created by sahar on 23/12/17.
  */
-
+//dataProvider for Recycler view
 public class DataProvider {
     private int img_res;
     private String title;

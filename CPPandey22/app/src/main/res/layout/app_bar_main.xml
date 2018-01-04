@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/title"
                     android:text="C P Pandey &amp; Co."
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/white"
                     android:layout_below="@+id/login"
                     android:layout_gravity="center"
                     android:paddingTop="10dp"

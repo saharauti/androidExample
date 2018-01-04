@@ -64,7 +64,6 @@ Context context;
 
             Typeface face= Typeface.createFromAsset(context.getAssets(), "font/Poppins-Regular.ttf");
             title.setTypeface(face);
-
         }
     }
 }

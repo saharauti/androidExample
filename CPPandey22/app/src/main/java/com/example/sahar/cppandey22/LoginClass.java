@@ -8,6 +8,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 /**
@@ -32,11 +33,11 @@ class LoginClass {
         Button login_btn = (Button) promptView.findViewById(R.id.btn_login); //login button inside the login dialog box
         login_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                goToLogin(context);
+                goToLogin(context,login_dialog);
             }
         });
 
-        ImageButton close_btn = (ImageButton) promptView.findViewById(R.id.login_close_btn);
+        ImageView close_btn = (ImageView) promptView.findViewById(R.id.login_close_btn);
         close_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,19 +48,19 @@ class LoginClass {
         login_dialog.show();
     }
 
-    private void goToLogin(Context context) {
+    private void goToLogin(Context context, Dialog login_dialog) {
         //on click of login , activity here
         String email = login_email.getText().toString();
         String password = login_pwd.getText().toString();
         if (email.matches("")) {
-            Toast.makeText(context, "Please enter your Email Id", Toast.LENGTH_LONG).show();
-
+            Toast.makeText(context, "Please enter your Email Id", Toast.LENGTH_SHORT).show();
         }
         if (password.matches("")) {
-            Toast.makeText(context, "Please enter your Password", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Please enter your Password", Toast.LENGTH_SHORT).show();
 
         } else {
-            Toast.makeText(context, "Login successful", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Login successful", Toast.LENGTH_SHORT).show();
+            login_dialog.dismiss();
         }
     }
 
