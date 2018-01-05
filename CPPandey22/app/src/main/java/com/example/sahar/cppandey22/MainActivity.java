@@ -146,7 +146,9 @@ public class MainActivity extends DrawerBaseActivity {
         Intent myIntent = new Intent(MainActivity.this, WebViewActivity.class);
         myIntent.putExtra("url",url);
         startActivity(myIntent);
+        overridePendingTransition(R.anim.enter_from_right,R.anim.exit_out_left);
         finish();
+
     }
 
     @Override
@@ -236,6 +238,29 @@ public class MainActivity extends DrawerBaseActivity {
 
         }
     }
+
+//    @SuppressWarnings("StatementWithEmptyBody")
+//    @Override
+//    public boolean onNavigationItemSelected(MenuItem item) {
+//        // Handling navigation view item clicks here
+//        int id = item.getItemId();
+//        String url = "";
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_view);
+//
+//        switch (id) {
+//            case R.id.nav_home:
+//                navigationView.setCheckedItem(id);
+//                if(drawer.isDrawerOpen(GravityCompat.START)){
+//                    drawer.closeDrawer(GravityCompat.START);
+//
+//                }
+//                break;
+//        }
+//
+//
+//
+//        return true;
+//    }
     @Override
         protected void onResume() {
             super.onResume();

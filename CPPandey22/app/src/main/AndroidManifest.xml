@@ -23,7 +23,8 @@
         <activity android:name=".WebViewActivity"
             android:theme="@style/custom_theme"/>
 
-        <activity android:name=".DrawerBaseActivity"/>
+        <activity android:name=".DrawerBaseActivity"
+            android:label=""/>
     </application>
 
 </manifest>

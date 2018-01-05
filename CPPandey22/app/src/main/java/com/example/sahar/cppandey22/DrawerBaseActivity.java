@@ -20,6 +20,8 @@ public class DrawerBaseActivity extends AppCompatActivity
     Button login,register;
     LinearLayout fullLayout;
     CoordinatorLayout actContent;
+    NavigationView navigationView;
+
 
 
     @Override
@@ -51,8 +53,7 @@ public class DrawerBaseActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -68,8 +69,9 @@ public class DrawerBaseActivity extends AppCompatActivity
 
     public void changeViews()
     {
+
         login.setText("Logout");
-        register.setVisibility(View.INVISIBLE);
+        register.setVisibility(View.GONE);
     }
     @Override
     public void onBackPressed() {
@@ -82,35 +84,40 @@ public class DrawerBaseActivity extends AppCompatActivity
         }
     }
 
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handling navigation view item clicks here
         int id = item.getItemId();
         String url = "";
+        navigationView.setCheckedItem(id);
 
         switch (id) {
             case R.id.nav_home:
+                navigationView.setCheckedItem(id);
                 startActivity(new Intent(DrawerBaseActivity.this, MainActivity.class));
                 break;
 
             case R.id.nav_team:
+                navigationView.setCheckedItem(id);
                 url = "http://demo.technowebmart.com/pandeyji_mob_app/doctors.html";
                 goToNewActivity(url);
                 break;
 
             case R.id.nav_enquiry:
+                navigationView.setCheckedItem(id);
                 url = "http://demo.technowebmart.com/pandeyji_mob_app/apointment.html";
                 goToNewActivity(url);
                 break;
 
             case R.id.nav_departments:
+                navigationView.setCheckedItem(id);
                 url = "http://demo.technowebmart.com/pandeyji_mob_app/departments.html";
                 goToNewActivity(url);
                 break;
 
             case R.id.nav_contact:
+                navigationView.setCheckedItem(id);
                 url = "http://demo.technowebmart.com/pandeyji_mob_app/contact.html";
                 goToNewActivity(url);
                 break;
@@ -131,6 +138,7 @@ public class DrawerBaseActivity extends AppCompatActivity
         Intent intent = new Intent(this, WebViewActivity.class);
         intent.putExtra("url", url);
         startActivity(intent);
+        overridePendingTransition(R.anim.enter_from_right,R.anim.exit_out_left);
         finish();
     }
 
@@ -139,10 +147,13 @@ public class DrawerBaseActivity extends AppCompatActivity
         switch (v.getId()) {
             case R.id.login:
                 if(login.getText().toString().equals("Login")) {
+
                     new LoginClass().showDialogContent(DrawerBaseActivity.this);
+
                 }else{
-                    login.setText("Login");
-                    register.setVisibility(View.VISIBLE);
+                   login.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_login,0,0,0);
+                   login.setText("Login");
+                   register.setVisibility(View.VISIBLE);
                 }
                 break;
 

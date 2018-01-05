@@ -17,20 +17,15 @@ import java.util.ArrayList;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder> {
 
     private ArrayList<DataProvider> arrayList = new ArrayList<DataProvider>();
-
-Context context;
+    Context context;
 
     public RecyclerAdapter(ArrayList<DataProvider> arrayList,Context context) {
-
         this.arrayList = arrayList;
         this.context = context;
     }
 
-
-
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view,parent,false);
         final RecyclerViewHolder recyclerViewHolder = new RecyclerViewHolder(view);
         return recyclerViewHolder;
@@ -39,7 +34,6 @@ Context context;
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position)
     {
-
         DataProvider dataprovider = arrayList.get(position);
         holder.imageView.setImageResource(dataprovider.getImg_res());
         holder.title.setText(dataprovider.get_title());
@@ -52,7 +46,6 @@ Context context;
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder
     {
-
         ImageView imageView;
         TextView title;
         public  RecyclerViewHolder(View view)

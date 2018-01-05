@@ -22,47 +22,64 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="5dp"
+                    android:layout_gravity="end"
+                    android:orientation="horizontal">
+
+
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:id="@+id/login"
                     android:text="Login"
-                    android:textAlignment="viewStart"
+                    android:gravity="center"
                     android:background="@color/colorPrimaryDark"
                     android:drawableLeft="@drawable/ic_login"
-                    android:layout_toLeftOf="@+id/register"
                     android:textAllCaps="false"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="15dp"
-                    android:layout_marginRight="2dp"
-                    android:layout_marginTop="2dp"/>
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="2dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="12dp"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:id="@+id/register"
                     android:text="Register"
-                    android:drawableLeft="@drawable/ic_register"
+                    android:drawableStart="@drawable/ic_register"
                     android:textAllCaps="false"
                     android:visibility="visible"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="18dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
                     android:background="@color/colorPrimaryDark"
                     android:layout_alignParentRight="true"
-                    android:paddingRight="15dp"
-                    android:paddingLeft="8dp"
-                    android:layout_marginTop="2dp"/>
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="2dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="12dp"/>
+                </LinearLayout>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/title"
                     android:text="C P Pandey &amp; Co."
                     android:textColor="@color/white"
-                    android:layout_below="@+id/register"
-                    android:layout_gravity="center"
-                    android:paddingTop="10dp"
                     android:gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="0dp"
                     android:textSize="22sp"/>
 
             </RelativeLayout>
