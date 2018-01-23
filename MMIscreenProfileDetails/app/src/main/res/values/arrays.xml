@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="label">
+        <item>First Name</item>
+        <item>Last Name</item>
+        <item>Father"'"s Name</item>
+        <item>Date of Birth</item>
+        <item>Adhaar Number</item>
+        <item>PAN</item>
+        <item>Type of Employment</item>
+        <item>Net Monthly Income</item>
+    </string-array>
+
+    <string-array name="details">
+        <item>Enter first Name</item>
+        <item>Enter last Name</item>
+        <item>Enter father"'"s Name</item>
+        <item>Enter date of birth</item>
+        <item>Enter adhaar number</item>
+        <item>Enter pan</item>
+        <item>Enter type of employment</item>
+        <item>Enter net monthly income</item>
+    </string-array>
+</resources>
